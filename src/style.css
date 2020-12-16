@@ -25,3 +25,6 @@
   top: -17px;
   font-size: 14px;
 }
+#description {
+  text-transform: capitalize;
+}
