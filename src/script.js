@@ -21,14 +21,18 @@ let humidityElement = document.querySelector("#humidity");
 let windElement = document.querySelector("#wind");
 let dateElement = document.querySelector("#date");
 let iconElement = document.querySelector("#icon");
+let minTempElement = document.querySelector("#min-temp");
+let maxTempElement = document.querySelector("#max-temp");
 
 temperatureElement.innerHTML = Math.round(response.data.main.temp);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 humidityElement.innerHTML = response.data.main.humidity;
-windElement.innerHTML = document.querySelector = Math.round(response.data.wind.speed);
+windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
-iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
+iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+minTempElement.innerHTML = Math.round(response.data.main.temp_min);
+maxTempElement.innerHTML = Math.round(response.data.main.temp_max); 
 }
 
 function search(city){
