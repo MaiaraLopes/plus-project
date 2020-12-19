@@ -25,6 +25,8 @@ let minTempElement = document.querySelector("#min-temp");
 let maxTempElement = document.querySelector("#max-temp");
 
 celsiusTemperature = response.data.main.temp;
+minCelsiusTemperature = response.data.main.temp_min
+maxCelsiusTemperature = response.data.main.temp_max
 
 temperatureElement.innerHTML = Math.round(celsiusTemperature);
 cityElement.innerHTML = response.data.name;
@@ -33,8 +35,8 @@ humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-minTempElement.innerHTML = Math.round(response.data.main.temp_min);
-maxTempElement.innerHTML = Math.round(response.data.main.temp_max); 
+minTempElement.innerHTML = Math.round(minCelsiusTemperature);
+maxTempElement.innerHTML = Math.round(maxCelsiusTemperature); 
 }
 
 function search(city){
@@ -53,16 +55,28 @@ function displayFahrenheitTemp(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let minTemperatureElement = document.querySelector("#min-temp");
+  let minFahrenheitTemperature = (minCelsiusTemperature * 9) / 5 + 32;
+  minTemperatureElement.innerHTML = Math.round(minFahrenheitTemperature);
+  let maxTemperatureElement = document.querySelector("#max-temp");
+  let maxFahrenheitTemperature = (maxCelsiusTemperature * 9) / 5 + 32;
+  maxTemperatureElement.innerHTML = Math.round(maxFahrenheitTemperature);
 }
 
 function displayCelsiusTemp(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let minTemperatureElement = document.querySelector("#min-temp");
+  minTemperatureElement.innerHTML = Math.round(minCelsiusTemperature);
+  let maxTemperatureElement = document.querySelector("#max-temp");
+  maxTemperatureElement.innerHTML = Math.round(maxCelsiusTemperature);
 }
 
 let celsiusTemperature = null;
+let minCelsiusTemperature = null;
+let maxCelsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
