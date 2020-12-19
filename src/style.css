@@ -27,6 +27,17 @@ h4 {
   top: -17px;
   font-size: 14px;
 }
+
 #description {
   text-transform: capitalize;
+}
+
+#celsius {
+  color: black;
+  text-decoration: none;
+}
+
+#fahrenheit {
+  color: black;
+  text-decoration: none;
 }
