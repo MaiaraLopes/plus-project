@@ -45,10 +45,14 @@ h4 {
 
 .weather-forecast {
   margin-top: 15px;
-  margin-left: 25px;
+  margin-left: 10px;
 }
 
-#date-forecast {
-  padding-left: 12px;
-  margin-bottom: 5px;
+#hour-forecast {
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+
+.weather-forecast-temperature {
+  padding-left: 15px;
 }
