@@ -1,5 +1,5 @@
 # Vanilla JavaScript Weather App
-This is a [weather app](https://stoic-hoover-6d9c67.netlify.app/) that makes a call to an API to show the current weather in a specific city and the forecast for the next six hours.
+This is a [weather app](https://ml-weather-app-js.netlify.app) that makes a call to an API to show the current weather in a specific city and the forecast for the next six hours.
 
 
 ## Built with
